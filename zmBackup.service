@@ -1,0 +1,13 @@
+# zmBackup backup service
+
+[Unit]
+Description=Perform zmBackup over a NAS partition
+OnFailure=zmBackup_email@%n.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/zmBackup.sh
+Nice=19
+
+[Install]
+WantedBy=multi-user.target

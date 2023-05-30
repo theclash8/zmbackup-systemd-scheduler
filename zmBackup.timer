@@ -1,0 +1,13 @@
+[Unit]
+Description=Timer to run Backup Zimbra Open Source Email Platform
+
+[Timer]
+Unit=zmBackup.service
+OnCalendar=Mon..Sat 1:30
+OnCalendar=Sun 1:30
+
+Persistent=True
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target
