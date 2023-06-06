@@ -19,15 +19,18 @@ cp zmBackup.sh systemd-email /usr/local/bin
 ```
 * Set the appropriate permissions
 ```
-chmod 755 /usr/local/bin/zmbackup.sh /usr/local/bin/systemd-email
+chmod 755 /usr/local/bin/zmBackup.sh /usr/local/bin/systemd-email
 ```
 * Copy the systemd files to /etc/systemd/system
 ```
 cp *.service *timer /etc/systemd/system
 ```
-* Enable the timer
+* Enable and start the timer
 ```
 systemctl enable zmBackup.timer
+
+systemctl start zmBackup.timer
+
 ```
 
 **that's it**

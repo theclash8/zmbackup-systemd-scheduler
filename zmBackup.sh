@@ -7,15 +7,15 @@ MOUNT_COMMAND=""
 # Umount command
 UMOUNT_COMMAND=""
 # Full backup command
-FULL_COMMAND="zmbackup -f"
+FULL_COMMAND="su zimbra -c 'zmbackup -f'"
 # Incremental backup command
-INCREMENTAL_COMMAND="zmbackup -i"
+INCREMENTAL_COMMAND="su zimbra -c 'zmbackup -i'"
 # Backup Rotation command
-BACKUP_ROTATION="zmbackup -hp"
+BACKUP_ROTATION="su zimbra -c 'zmbackup -hp'"
 # Distribution list backup command
-DISTRIBUTION_LIST_BACKUP="zmbackup -f -dl"
+DISTRIBUTION_LIST_BACKUP="su zimbra -c 'zmbackup -f -dl'"
 # Alias Backup command
-ALIAS_BACKUP="zmbackup -f -al"
+ALIAS_BACKUP="su zimbra -c 'zmbackup -f -al'"
 
 
 RET=0
@@ -23,7 +23,6 @@ function runCommand() {
   $@ || RET=1
 }
 
-echo $TODAY
 echo "$(date +%D) - Starting Backup"
 echo "Mounting remote partition"
 runCommand "${MOUNT_COMMAND}"
