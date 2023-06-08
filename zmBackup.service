@@ -2,7 +2,7 @@
 
 [Unit]
 Description=Perform zmBackup over a NAS partition
-OnFailure=zmBackup_email@%n.service
+After=zmBackup_email@%n.service
 
 [Service]
 Type=simple
